@@ -1,5 +1,6 @@
 {
 	"recommendations": [
-		"justusadam.language-haskell"
+		"justusadam.language-haskell",
+		"arthurwang.vsc-prolog"
 	]
 }
