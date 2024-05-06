@@ -44,7 +44,8 @@ V = 'Hiszpania'.
 
 % Jakie zabytki można zwiedzać w Państwach sąsiadujących z Francją?
 /*
-28 ?- obok('Francja', K) , panstwo(K) , polozenie(C, K) , miasto(C) , gdzie(M, C) , zabytek(M). 
+1 ?- (obok('Francja', K) ; obok(K, 'Francja')), panstwo(K) , polozenie(C
+iasto(C) , gdzie(M, C) , zabytek(M).
 K = 'Wielka Brytania',
 C = 'Londyn',
 M = 'Tower Bridge' ;
@@ -74,7 +75,13 @@ C = 'Barcelona',
 M = 'Sagrada Familia' ;
 K = 'Hiszpania',
 C = 'Madryt',
-M = 'Pałac Kryształowy'.
+M = 'Pałac Kryształowy' ;
+K = 'Niemcy',
+C = 'Berlin',
+M = 'Brama Brandenburska' ;
+K = 'Niemcy',
+C = 'Berlin',
+M = 'Reichstag'.
 */
 
 % Jakie zabytki można zwiedzać w państwie, w którym znajduje się Barcelona?
