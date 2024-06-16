@@ -81,12 +81,12 @@ M = wieliczka.
 % 2. 
 rodzic(X, Y) :-
   ojciec(X, Y);
-  matka(X, Y).
+  matka(X, Y), !.
 
 dziadek(X, Y) :-
   mezczyzna(X),
   ojciec(X, C),
-  rodzic(C, Y), !.
+  rodzic(C, Y).
 /*
 24 ?- dziadek(tomek, ania).
 true.
