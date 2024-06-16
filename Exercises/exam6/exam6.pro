@@ -79,42 +79,30 @@ M = wieliczka.
 */
 
 % 2. 
+rodzic(X, Y) :-
+  ojciec(X, Y);
+  matka(X, Y).
+
 dziadek(X, Y) :-
   mezczyzna(X),
-  ojciec(X, Z),
-  ojciec(Z, Y).
+  ojciec(X, C),
+  rodzic(C, Y), !.
 /*
-1 ?- dziadek(adam, adrian).
+24 ?- dziadek(tomek, ania).
 true.
-
-2 ?- dziadek(adam, radek).  
-false.
-
-3 ?- dziadek(adam, X).     
-X = adrian.
-
-4 ?- dziadek(X, Y).
-X = adam,
-Y = adrian ;
-false.
 */
-
-rodzic(X, Y) :-
-  matka(X, Y);
-  ojciec(X, Y).
-
 
 siostra(X, Y) :-
   kobieta(X),
-  rodzic(R, X),
-  rodzic(R, Y),
-  X \= Y.
+  rodzic(P, X),
+  rodzic(P, Y),
+  X \= Y, !.
+
 /*
-17 ?- siostra(lila, kasia). 
-true ;
+30 ?- siostra(lila, kasia). 
 true.
 
-18 ?- siostra(lila, adam).  
+33 ?- siostra(karol, ania). 
 false.
 */
 
